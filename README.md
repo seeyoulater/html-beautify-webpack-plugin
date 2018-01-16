@@ -1,0 +1,1 @@
+# html-beautify-webpack-plugin
