@@ -1,6 +1,6 @@
 {
   "name": "html-beautify-webpack-plugin",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Adapter for beautifyjs as webpack plugin, chained with HtmlWebpackPlugin",
   "main": "index.js",
   "scripts": {

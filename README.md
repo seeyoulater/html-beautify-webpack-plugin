@@ -49,7 +49,7 @@ const HtmlBeautifyPlugin = require('html-beautify-webpack-plugin');
 
 Configuration
 -------------
-You can pass a hash of configuration options to `HtmlWebpackPlugin`.
+You can pass a configuration options.
 Allowed values are as follows:
 
 - `config`: `{...}` [js-beautify](https://github.com/beautify-web/js-beautify)'s options as object to beatify the output.
