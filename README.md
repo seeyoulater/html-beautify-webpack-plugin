@@ -1,5 +1,5 @@
 # html-beautify-webpack-plugin
-Beatfier for output of [HtmlWebpackPlugin](https://github.com/jantimon/html-webpack-plugin)
+Beautifier for output of [HtmlWebpackPlugin](https://github.com/jantimon/html-webpack-plugin)
 
 Installation
 ------------
