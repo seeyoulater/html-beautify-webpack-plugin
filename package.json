@@ -1,0 +1,32 @@
+{
+  "name": "html-beautify-webpack-plugin",
+  "version": "1.0.0",
+  "description": "Adapter for beautifyjs as webpack plugin, chained with HtmlWebpackPlugin",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SeeYouLater/html-beautify-webpack-plugin.git"
+  },
+  "keywords": [
+    "webpack",
+    "html",
+    "beatify",
+    "plugin",
+    "HtmlWebpackPlugin"
+  ],
+  "author": "Dmitry Zhdanov <dmitryzhdanov94@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/SeeYouLater/html-beautify-webpack-plugin/issues"
+  },
+  "homepage": "https://github.com/SeeYouLater/html-beautify-webpack-plugin#readme",
+  "devDependencies": {
+    "assert": "^1.4.1",
+    "chalk": "^2.3.0",
+    "js-beautify": "^1.7.5",
+    "lodash": "^4.17.4"
+  }
+}
