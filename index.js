@@ -22,15 +22,15 @@ function HtmlBeautifyPlugin ({ config = {}, replace } = { config: {}, replace: [
 }
 
 HtmlBeautifyPlugin.prototype.apply = function (compiler) {
-	compiler.plugin('compilation', compilation =>
-		compilation.plugin('html-webpack-plugin-after-html-processing', (htmlPluginData, callback) => {
+	compiler.hooks.compilation.tap('HtmlBeautifyPlugin', compilation =>
+		compilation.hooks.htmlWebpackPluginAfterHtmlProcessing.tapAsync('HtmlBeautifyPlugin', (htmlPluginData, callback) => {
 			htmlPluginData.html = beautify(_.reduce(this.options.replace, (res, item) => {
 				if(typeof item === 'string' || item instanceof RegExp)
 					return res.replace(item instanceof RegExp ? item : new RegExp(item, 'gi'), '')
 				else
 					return res.replace(item.test instanceof RegExp ? item.test : new RegExp(item.test, 'gi'), item.with || '')
 			}, htmlPluginData.html), this.options.config)
-			
+
 			callback(null, htmlPluginData)
 		}))
 }
