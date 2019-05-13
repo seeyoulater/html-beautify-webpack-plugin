@@ -24,7 +24,7 @@
   },
   "homepage": "https://github.com/SeeYouLater/html-beautify-webpack-plugin#readme",
   "dependencies": {
-    "assert": "^1.4.1",
+    "assert": "^2.0.0",
     "chalk": "^2.3.0",
     "js-beautify": "^1.7.5",
     "lodash": "^4.17.4"
