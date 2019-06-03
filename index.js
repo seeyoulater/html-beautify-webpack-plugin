@@ -10,7 +10,7 @@ function HtmlBeautifyPlugin ({ config = {}, replace } = { config: {}, replace: [
 	assert(config && typeof config === 'object' , chalk.red('Beautify config should be an object.'))
 
 	this.options = {
-		config: _.extend({
+		config: _.merge({
 			indent_size: 4,
 			indent_with_tabs: false,
 			html: {
