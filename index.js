@@ -1,3 +1,4 @@
+const HtmlWebpackPlugin = require('html-webpack-plugin')
 const webpack = require('webpack')
 const _ = require('lodash')
 const chalk = require('chalk')
@@ -42,11 +43,18 @@ HtmlBeautifyPlugin.prototype.apply = function (compiler) {
             })
         )
     } else {
-        compiler.hooks.compilation.tap('HtmlBeautifyPlugin', compilation =>
-            compilation.hooks.htmlWebpackPluginAfterHtmlProcessing.tapAsync('HtmlBeautifyPlugin', (htmlPluginData, callback) => {
-                htmlPluginDataFunction(htmlPluginData, callback, this)
-            })
-        )
+        compiler.hooks.compilation.tap('HtmlBeautifyPlugin', (compilation) =>
+            HtmlWebpackPlugin.getHooks
+                ? HtmlWebpackPlugin.getHooks(compilation).afterTemplateExecution.tapAsync(
+                      'HtmlBeautifyPlugin',
+                      (htmlPluginData, callback) => {
+                          htmlPluginDataFunction(htmlPluginData, callback, this);
+                      },
+                  )
+                : compilation.hooks.htmlWebpackPluginAfterHtmlProcessing.tapAsync('HtmlBeautifyPlugin', (htmlPluginData, callback) => {
+                      htmlPluginDataFunction(htmlPluginData, callback, this);
+                  }),
+        );
     }
 }
 
